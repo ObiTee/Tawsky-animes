@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel - Tawsky Animes{% endblock %}
+
+{% block content %}
+    <div class="admin-header">
+        <h1 class="section-title">Admin Dashboard</h1>
+    </div>
+
+    <div class="admin-stats">
+        <div class="stat-card">
+            <div class="stat-label">Total Users</div>
+            <div class="stat-value">1,254</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Total Anime</div>
+            <div class="stat-value">387</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Total Manga</div>
+            <div class="stat-value">215</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">New Users (7d)</div>
+            <div class="stat-value">84</div>
+        </div>
+    </div>
+
+    <div class="upload-section">
+        <h2 class="section-title">Upload New Content</h2>
+        <form class="upload-form" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Content Type</label>
+                <select name="content_type" required>
+                    <option value="">Select type</option>
+                    <option value="anime">Anime</option>
+                    <option value="manga">Manga</option>
+                    <option value="episode">Anime Episode</option>
+                    <option value="chapter">Manga Chapter</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="title" required>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea name="description" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Genres</label>
+                <div class="genre-checkboxes">
+                    <label><input type="checkbox" name="genres" value="action"> Action</label>
+                    <label><input type="checkbox" name="genres" value="adventure"> Adventure</label>
+                    <label><input type="checkbox" name="genres" value="comedy"> Comedy</label>
+                    <label><input type="checkbox" name="genres" value="drama"> Drama</label>
+                    <label><input type="checkbox" name="genres" value="fantasy"> Fantasy</label>
+                    <label><input type="checkbox" name="genres" value="horror"> Horror</label>
+                    <label><input type="checkbox" name="genres" value="mystery"> Mystery</label>
+                    <label><input type="checkbox" name="genres" value="romance"> Romance</label>
+                    <label><input type="checkbox" name="genres" value="sci-fi"> Sci-Fi</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>File Upload</label>
+                <input type="file" name="file" required>
+            </div>
+            <div class="form-group">
+                <label>Thumbnail Image</label>
+                <input type="file" name="thumbnail" accept="image/*" required>
+            </div>
+            <button type="submit" class="submit-btn">Upload Content</button>
+        </form>
+    </div>
+
+    <div class="users-section">
+        <h2 class="section-title">Recent Users</h2>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Joined</th>
+                    <th>Last Login</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- This would be dynamically generated from database in real app -->
+                <tr>
+                    <td>1254</td>
+                    <td>anime_lover</td>
+                    <td>user1@example.com</td>
+                    <td>2023-05-15</td>
+                    <td>2023-06-20</td>
+                    <td>
+                        <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                        <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1253</td>
+                    <td>manga_reader</td>
+                    <td>user2@example.com</td>
+                    <td>2023-05-14</td>
+                    <td>2023-06-19</td>
+                    <td>
+                        <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                        <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1252</td>
+                    <td>otaku_king</td>
+                    <td>user3@example.com</td>
+                    <td>2023-05-13</td>
+                    <td>2023-06-18</td>
+                    <td>
+                        <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                        <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

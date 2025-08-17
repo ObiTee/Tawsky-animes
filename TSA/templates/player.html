@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}{{ anime_title }} - Tawsky Animes{% endblock %}
+
+{% block content %}
+    <div class="player-container">
+        <div class="video-player">
+            <!-- Video player would be dynamically generated -->
+            <video controls autoplay width="100%" height="100%">
+                <source src="{{ url_for('static', filename='videos/sample.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="player-controls">
+            <div class="player-info">
+                <h2>{{ anime_title }} - Episode {{ episode_number }}</h2>
+            </div>
+            <div class="player-actions">
+                <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="episode-selector">
+        <h3 class="section-title">Episodes</h3>
+        <div class="episode-list">
+            <!-- This would be dynamically generated from database in real app -->
+            {% for i in range(1, 13) %}
+                <div class="episode-item {% if i == episode_number %}active{% endif %}" data-episode-id="{{ i }}">
+                    Episode {{ i }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="anime-details">
+        <h3 class="section-title">About This Anime</h3>
+        <div class="details-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.</p>
+            <div class="detail-meta">
+                <div><strong>Rating:</strong> 9.8 <i class="fas fa-star"></i></div>
+                <div><strong>Genre:</strong> Action, Drama, Fantasy</div>
+                <div><strong>Studio:</strong> Wit Studio, MAPPA</div>
+                <div><strong>Release Date:</strong> April 7, 2013</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

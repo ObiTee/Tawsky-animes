@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}Anime List - Tawsky Animes{% endblock %}
+
+{% block content %}
+    <div class="anime-list-header">
+        <h1 class="section-title">Anime List</h1>
+        <div class="filter-options">
+            <select class="filter-select">
+                <option>All Genres</option>
+                <option>Action</option>
+                <option>Adventure</option>
+                <option>Comedy</option>
+                <option>Drama</option>
+                <option>Fantasy</option>
+                <option>Horror</option>
+                <option>Mystery</option>
+                <option>Romance</option>
+                <option>Sci-Fi</option>
+            </select>
+            <select class="filter-select">
+                <option>Sort by Popularity</option>
+                <option>Sort by Rating</option>
+                <option>Sort by A-Z</option>
+                <option>Sort by Z-A</option>
+                <option>Sort by Newest</option>
+                <option>Sort by Oldest</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="anime-grid">
+        <!-- This would be dynamically generated from database in real app -->
+        <div class="anime-card">
+            <a href="{{ url_for('player', anime_id=1) }}">
+                <img src="{{ url_for('static', filename='images/attack-on-titan.jpg') }}" alt="Attack on Titan">
+                <div class="anime-info">
+                    <div class="anime-title">Attack on Titan Final Season</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.8 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="anime-card">
+            <a href="{{ url_for('player', anime_id=2) }}">
+                <img src="{{ url_for('static', filename='images/demon-slayer.jpg') }}" alt="Demon Slayer">
+                <div class="anime-info">
+                    <div class="anime-title">Demon Slayer: Entertainment District Arc</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.5 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="anime-card">
+            <a href="{{ url_for('player', anime_id=3) }}">
+                <img src="{{ url_for('static', filename='images/jujutsu-kaisen.jpg') }}" alt="Jujutsu Kaisen">
+                <div class="anime-info">
+                    <div class="anime-title">Jujutsu Kaisen Season 2</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.7 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="anime-card">
+            <a href="{{ url_for('player', anime_id=4) }}">
+                <img src="{{ url_for('static', filename='images/one-piece.jpg') }}" alt="One Piece">
+                <div class="anime-info">
+                    <div class="anime-title">One Piece: Wano Country Arc</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.3 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="anime-card">
+            <a href="{{ url_for('player', anime_id=5) }}">
+                <img src="{{ url_for('static', filename='images/my-hero-academia.jpg') }}" alt="My Hero Academia">
+                <div class="anime-info">
+                    <div class="anime-title">My Hero Academia Season 6</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.1 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="anime-card">
+            <a href="{{ url_for('player', anime_id=6) }}">
+                <img src="{{ url_for('static', filename='images/chainsaw-man.jpg') }}" alt="Chainsaw Man">
+                <div class="anime-info">
+                    <div class="anime-title">Chainsaw Man</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.4 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="anime-card">
+            <a href="{{ url_for('player', anime_id=7) }}">
+                <img src="{{ url_for('static', filename='images/spy-x-family.jpg') }}" alt="Spy x Family">
+                <div class="anime-info">
+                    <div class="anime-title">Spy x Family</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.2 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="anime-card">
+            <a href="{{ url_for('player', anime_id=8) }}">
+                <img src="{{ url_for('static', filename='images/vinland-saga.jpg') }}" alt="Vinland Saga">
+                <div class="anime-info">
+                    <div class="anime-title">Vinland Saga Season 2</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.6 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+{% endblock %}

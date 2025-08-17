@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Tawsky Animes{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Welcome to Tawsky Animes</h1>
+        <p>Your ultimate destination for streaming the latest anime series and reading popular manga. Join our community of anime lovers today!</p>
+        <a href="{{ url_for('signup') }}" class="cta-button">Get Started</a>
+    </section>
+
+    <section class="featured-anime">
+        <h2 class="section-title">Trending Now</h2>
+        <div class="anime-grid">
+            <!-- Anime cards would be dynamically generated from database in real app -->
+            <div class="anime-card">
+                <img src="{{ url_for('static', filename='images/attack-on-titan.jpg') }}" alt="Attack on Titan">
+                <div class="anime-info">
+                    <div class="anime-title">Attack on Titan Final Season</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.8 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="anime-card">
+                <img src="{{ url_for('static', filename='images/demon-slayer.jpg') }}" alt="Demon Slayer">
+                <div class="anime-info">
+                    <div class="anime-title">Demon Slayer: Entertainment District Arc</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.5 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="anime-card">
+                <img src="{{ url_for('static', filename='images/jujutsu-kaisen.jpg') }}" alt="Jujutsu Kaisen">
+                <div class="anime-info">
+                    <div class="anime-title">Jujutsu Kaisen Season 2</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.7 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-anime">
+        <h2 class="section-title">Popular Anime</h2>
+        <div class="anime-grid">
+            <!-- More anime cards -->
+            <div class="anime-card">
+                <img src="{{ url_for('static', filename='images/one-piece.jpg') }}" alt="One Piece">
+                <div class="anime-info">
+                    <div class="anime-title">One Piece: Wano Country Arc</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.3 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="anime-card">
+                <img src="{{ url_for('static', filename='images/my-hero-academia.jpg') }}" alt="My Hero Academia">
+                <div class="anime-info">
+                    <div class="anime-title">My Hero Academia Season 6</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.1 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="anime-card">
+                <img src="{{ url_for('static', filename='images/chainsaw-man.jpg') }}" alt="Chainsaw Man">
+                <div class="anime-info">
+                    <div class="anime-title">Chainsaw Man</div>
+                    <div class="anime-meta">
+                        <span>TV Series</span>
+                        <span class="rating">9.4 <i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

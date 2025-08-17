@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up - Tawsky Animes{% endblock %}
+
+{% block content %}
+    <div class="auth-container">
+        <h1 class="auth-title">Create an Account</h1>
+        <form method="POST" action="{{ url_for('signup') }}">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            <div class="form-group">
+                <label>Favorite Genres</label>
+                <div class="genre-checkboxes">
+                    <label><input type="checkbox" name="genres" value="action"> Action</label>
+                    <label><input type="checkbox" name="genres" value="adventure"> Adventure</label>
+                    <label><input type="checkbox" name="genres" value="comedy"> Comedy</label>
+                    <label><input type="checkbox" name="genres" value="drama"> Drama</label>
+                    <label><input type="checkbox" name="genres" value="fantasy"> Fantasy</label>
+                    <label><input type="checkbox" name="genres" value="horror"> Horror</label>
+                    <label><input type="checkbox" name="genres" value="mystery"> Mystery</label>
+                    <label><input type="checkbox" name="genres" value="romance"> Romance</label>
+                    <label><input type="checkbox" name="genres" value="sci-fi"> Sci-Fi</label>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        <div class="auth-footer">
+            <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+        </div>
+    </div>
+{% endblock %}
